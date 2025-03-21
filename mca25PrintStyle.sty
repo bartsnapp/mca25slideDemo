@@ -1,0 +1,14 @@
+\RequirePackage[paperwidth=16cm,paperheight=9cm,top=1cm,bottom=1cm,left=1cm,right=1cm]{geometry}
+
+
+\usepackage{eso-pic}
+\AddToShipoutPictureBG{%
+\pagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+    \draw[fill=yellow] (-.1,0) rectangle (\paperwidth,\paperheight);  %% Fills WHOLE page
+    \draw[fill=blue,draw=none] (-.1,.3\paperheight) --  (.5\paperwidth,0) -- (-.1,0) -- cycle;  %% lower diagonal   
+    \draw[fill=blue,draw=none] (.5\paperwidth,\paperheight) --  (\paperwidth,.7\paperheight) -- (\paperwidth,\paperheight) -- cycle;  %% upper diagonal
+    \node at (.1\paperwidth,.9\paperheight) {\includegraphics[width=.08\paperwidth]{mcaLogo.png}};
+    \node at (.9\paperwidth,.9\paperheight) {\includegraphics[width=.08\paperwidth]{mca25Logo.png}};
+\end{tikzpicture}
+}
