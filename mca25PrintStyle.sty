@@ -26,7 +26,7 @@
 
 
 %%%% Kill citations
-\renewcommand{\cite}[1]{}
+\renewcommand{\cite}[1]{\!}
 
 %%%% Decorate the background of each page
 \usepackage{eso-pic}
@@ -38,9 +38,11 @@
     \draw[fill=blue,draw=none] (.5\paperwidth,\paperheight) --  (\paperwidth,.7\paperheight) -- (\paperwidth,\paperheight) -- cycle;  %% upper diagonal
     \node at (.1\paperwidth,.1\paperheight) {\includegraphics[width=.08\paperwidth]{mcaLogo.png}};
     \node at (.9\paperwidth,.9\paperheight) {\includegraphics[width=.08\paperwidth]{mca25Logo.png}};
-    % \node[anchor=east,black] at (1cm+\textwidth,-.9\paperheight) {\large\sffamily developed in \resizebox{!}{1cm}{\begin{tikzpicture}[x=1cm,y=1cm]
-      \begin{scope}[xshift=500,yshift=100,transform canvas={scale=.05},]
-        \clip(0,0) rectangle (73cm,12cm);
+
+    \node[anchor=west,black] at (.8\paperwidth,.07\paperheight) {\large\sffamily this slide was created with \phantom{XIMERA}};
+       \begin{scope}[transform canvas={shift={(29,.5)}}]
+        \begin{scope}[transform canvas={scale=.032}]
+      \clip(0,0) rectangle (73cm,12cm);
         %% X
         \begin{scope}[xshift=1cm]
         \draw[line width=2.5cm] (0,-2) -- (14,14);
@@ -86,6 +88,7 @@
           (0,0)--(6,12.75)--(12,0);
         \end{scope}
       \end{scope}
+    \end{scope}
       %\draw[step=1cm,gray,very thin] (0,0) grid (71,10);
 \end{tikzpicture}
 }
